@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv = "Content-Type"  content="text/html; charset=utf-8" />
+<script src="js/jquery-2.2.3.min.js"></script>
+<title>仿魅族首页轮播图</title>
+
+<style>
+	*{margin:0;padding:0;}
+	li{list-style:none;}
+	a{text-decoration:none;}
+	
+
+	.slider{
+		width:100%;
+		height:761px;
+		overflow:hidden;
+		position:relative;
+	}
+
+	.slider-wrapper{
+	animation: move 25s  infinite linear;
+	-webkit-animation: move 25s infinite linear;
+	-moz--animation: move 25s infinite linear;
+}
+
+	@keyframes move
+	{
+		0%,19%{transform:translateX(0);} 
+		20%,39%{transform:translateX(-20%);}
+		40%,59% {transform:translateX(-40%);}
+		60%,79%{transform:translateX(-60%);}
+		80%,99% {transform:translateX(-80%);}
+		100% {transform:translateX(0);}
+	}
+	@-webkit-keyframes move 
+	{
+		0%,18%{transform:translateX(0);} 
+		20%,38%{transform:translateX(-20%);}
+		40%,58% {transform:translateX(-40%);}
+		60%,78%{transform:translateX(-60%);}
+		80%,98% {transform:translateX(-80%);}
+		100% {transform:translateX(0);}
+	} 
+
+	.slider-m-e{background-image:url(images/1470123755918.jpg);}
+	.slider-pro6{background-image:url(images/1461322732621.jpg);}
+	.slider-mx6{background-image:url(images/1469787101093.jpg);}
+	.slider-loopjacket{background-image:url(images/1468907239706.jpg);}
+	.slider-m3s{background-image:url(images/1466580197311.jpg);}
+	.slider-box{height:761px;background-position:center 0;float:left;}
+
+	.chat{width:400px;background:#404040;position:absolute;left:20px;z-index:10;}
+	.chat p{color:#fff;font-family:'微软雅黑';padding:5px;}
+</style>
+<script>
+	window.onload=function(){
+
+		var sliderBox = document.getElementsByClassName('slider-box');
+		var sliderWrapper = document.getElementsByClassName('slider-wrapper')[0];
+		var pagination = document.getElementsByClassName('pagination')[0];
+		var winWidth = document.documentElement.clientWidth;
+		var oSpan = document.getElementsByTagName('span');
+
+		for(var i=0;i<sliderBox.length;i++){
+			sliderBox[i].style.width = winWidth+'px';
+		}
+	
+		sliderWrapper.style.width = winWidth*5 +'px';
+			
+
+	}
+</script>
+
+</head>
+<body>
+	<div class="slider">
+		<div class="slider-wrapper">
+			<ul>
+				<li class="slider-m-e slider-box"><a href="#"></a></li>
+				<li class="slider-pro6 slider-box"><a href="#"></a></li>
+				<li class="slider-mx6 slider-box"><a href="#"></a></li>
+				<li class="slider-loopjacket slider-box"><a href="#"></a></li>
+				<li class="slider-m3s slider-box"><a href="#"></a></li>
+			</ul>
+		</div>
+
+		<div class="chat">
+			<p>只实现了定时轮播，其他的效果搞不定啊！！！</p>
+			<p>本来是打算通过获取translateX()的值进行匹配...结果这种方式只针对内联元素...又想着，换成定位left值或者offsetLeft...还是不行...</p>
+			<p>会的东西太少，想不出别的办法了...</p>
+
+		</div>
+	</div>
+
+
+
+
+
+</body>
+</html>
